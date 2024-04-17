@@ -16,22 +16,21 @@ tw-passage {
 }
 tw-story[tags~="Lobby"] {
   	background-image:url("https://opreand.github.io/Illumis_World/lobbyIntroNews.png");
-	background-size:50% auto;
 	background-repeat: no-repeat;
 	background-position: center top;
 	
 }
 tw-story[tags~="playerSetup"] {
   	background-image:url("https://studiozuhno.files.wordpress.com/2024/04/terralux-map.png");
-	background-size:50% auto;
+  	background-size: 50% auto;
 	background-repeat: no-repeat;
 	background-position: center top;
 	
 }
 tw-story[tags~="HowToPlay"] {
   	background-image:url("https://studiozuhno.files.wordpress.com/2024/04/welcome-to-terralux.png");
-	background-size:50% auto;
-	background-repeat: no-repeat;
+	
+  background-repeat: no-repeat;
 	background-position: center top;
 	
 }
@@ -110,7 +109,7 @@ Will you take the Incandescent bulb?
 
 
 
-(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="5" name="LobbyIntro" tags="Lobby" position="100,105" size="100,100">{&lt;div class=&quot;banner&quot;&gt;
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="5" name="LobbyIntro" tags="Lobby" position="100,125" size="100,100">{&lt;div class=&quot;banner&quot;&gt;
 Sitting in the lobby of a small research facility in the Galapogos Islands, the last remaining area on Earth with clean air and water. The only remaining hope for saving our planet rests on the recent discovery of a creature that landed on the islands during a meteor shower.
 &lt;/div&gt;}
 &lt;style&gt;
@@ -163,7 +162,7 @@ Dr. Chan: (Concerned) Incandescent bulbs consume more energy. They might harm Il
 tw-sidebar
 {
 display: none;
-}</tw-passagedata><tw-passagedata pid="7" name="opening" tags="narrative" position="100,225" size="100,100">
+}</tw-passagedata><tw-passagedata pid="7" name="opening" tags="narrative" position="100,245" size="100,100">
 &lt;div class=&quot;video-container&quot;&gt;
     &lt;video src=&quot;https://videos.files.wordpress.com/bcdKL7qX/illumis-welcome-video.mp4&quot; width=&quot;1000&quot; height=&quot;720&quot; controls&gt;&lt;/video&gt;
 	&lt;/div&gt;
@@ -176,7 +175,7 @@ position: relative;
 &lt;/style&gt;
 
 [[Click here to play!-&gt;HowToPlay]]
-</tw-passagedata><tw-passagedata pid="8" name="HowToPlay" tags="HowToPlay" position="100,350" size="100,100">&lt;style&gt;
+</tw-passagedata><tw-passagedata pid="8" name="HowToPlay" tags="HowToPlay" position="101.66666666666667,350" size="100,100">&lt;style&gt;
 .banner {
 font-size: 20pt;
 font-family: arial;
@@ -214,9 +213,9 @@ a:visited {
 }
 &lt;/style&gt;
 &lt;div class=&quot;playLink&quot;&gt;
-[[Click here to play!-&gt;opening]]
+[[Click here to play!-&gt;playerSetup]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="9" name="playerSetup" tags="Player-Setup playerSetup" position="100,475" size="100,100">(set:$location to &quot;playerSetup&quot;)
+</tw-passagedata><tw-passagedata pid="9" name="playerSetup" tags="Player-Setup playerSetup" position="225.00000000000003,475" size="100,100">(set:$location to &quot;playerSetup&quot;)
 (set: $name to (prompt: &quot;What is your name?&quot;, &quot;Eury&quot;))
 {&lt;div class=&quot;banner&quot;&gt;
 I mean, $name! Today&#39;s lesson: how many researchers does it take to change a lightbulb for Illumi? The answer? Well, we&#39;re about to find out!
