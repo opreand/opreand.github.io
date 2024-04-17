@@ -9,22 +9,24 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Illumi&#39;s World.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Illumi&#39;s World" startnode="1" creator="Twine" creator-version="2.3.14" ifid="4F8E7359-3C5C-4B21-81C1-C62693407348" zoom="1" format="Harlowe" format-version="3.3.8" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation');
+<tw-storydata name="Illumi&#39;s World" startnode="1" creator="Twine" creator-version="2.3.14" ifid="4F8E7359-3C5C-4B21-81C1-C62693407348" zoom="0.6" format="Harlowe" format-version="3.3.8" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation');
   
 tw-passage {
   font-family: Edu NSW ACT Foundation;
 }
 tw-story[tags~="Lobby"] {
-  	background-image:url("https://opreand.github.io/Illumis_World/lobbyIntroNews.png");
+  	background-image:url("https://opreand.github.io/Illumis World/lobbyIntroNews.png");
 	background-size:50% auto;
 	background-repeat: no-repeat;
 	background-position: center top;
+	
 }
 tw-story[tags~="playerSetup"] {
   	background-image:url("https://studiozuhno.files.wordpress.com/2024/04/terralux-map.png");
 	background-size:50% auto;
 	background-repeat: no-repeat;
 	background-position: center top;
+	
 }
 tw-story[tags~="HowToPlay"] {
   	background-image:url("https://studiozuhno.files.wordpress.com/2024/04/welcome-to-terralux.png");
@@ -64,7 +66,7 @@ visibility: hidden
   </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 </script><tw-tag name="incubatorMap" color="purple"></tw-tag>,<tw-tag name="utilityClosetMap" color="purple"></tw-tag>,<tw-tag name="terraLuxMap" color="purple"></tw-tag>,<tw-tag name="incubator" color="red"></tw-tag>,<tw-tag name="utilityCloset" color="orange"></tw-tag>,<tw-tag name="Player-Setup" color="purple"></tw-tag>,<tw-tag name="playerSetup" color="purple"></tw-tag>,<tw-tag name="HowToPlay" color="orange"></tw-tag><tw-passagedata pid="1" name="Advertisement" tags="" position="100,0" size="100,100">{
 &lt;div class=&quot;video-container&quot;&gt;
-    &lt;video src=&quot;https://videos.files.wordpress.com/4QDqVy1U/news-report.mp4&quot; width=&quot;720&quot; height=&quot;720&quot; autoplay&gt;&lt;/video&gt;
+    &lt;video src=&quot;https://videos.files.wordpress.com/4QDqVy1U/news-report.mp4&quot; width=&quot;720&quot; height=&quot;720&quot; controls&gt;&lt;/video&gt;
 	&lt;/div&gt;
 	
 	&lt;style&gt;
@@ -82,37 +84,33 @@ position: relative;
 
  
   
-}</tw-passagedata><tw-passagedata pid="2" name="Choose LED" tags="utilityCloset" position="700,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/opreand/IllumisWorld/main/sampleImages/LED.png?token=GHSAT0AAAAAACQW4NBESJNPG6AQO5N6CDRUZQW63BQ&quot;&gt;
+}</tw-passagedata><tw-passagedata pid="2" name="Choose LED" tags="utilityCloset" position="1125,2175" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/opreand/IllumisWorld/main/sampleImages/LED.png?token=GHSAT0AAAAAACQW4NBESJNPG6AQO5N6CDRUZQW63BQ&quot;&gt;
 
 
     
 	(link:&quot;Incubator with Bulb&quot;)[(alert: bind $confirm, &quot;You want the LED Bulb?&quot;, &quot;Yes&quot;, &quot;No&quot;)
-	(if: $confirm is &quot;Yes&quot;)[(goto:&quot;Incubator with Bulb&quot;)]
-	(if: $confirm is &quot;No&quot;)[(goto:&quot;Choose LED&quot;)]
+	(if: $confirm is &quot;Yes&quot;)[(goto:&quot;LED Chan&quot;)]
+	(if: $confirm is &quot;No&quot;)[(goto:&quot;Light Bulb Selection&quot;)]
 	]
-
-
-(set:$location to &quot;Utility Closet&quot;)
-</tw-passagedata><tw-passagedata pid="3" name="Choose Fluorescent" tags="utilityCloset" position="900,625" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/opreand/IllumisWorld/main/sampleImages/Fluorescent.png?token=GHSAT0AAAAAACQW4NBFXITL2G4BK4NL3SYMZQW63YA&quot;&gt;
+</tw-passagedata><tw-passagedata pid="3" name="Choose Fluorescent" tags="utilityCloset" position="1000,2175" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/opreand/IllumisWorld/main/sampleImages/Fluorescent.png?token=GHSAT0AAAAAACQW4NBFXITL2G4BK4NL3SYMZQW63YA&quot;&gt;
 
 	(link:&quot;Incubator with Bulb&quot;)[(alert: bind $confirm, &quot;You want the LED Bulb?&quot;, &quot;Yes&quot;, &quot;No&quot;)
-	(if: $confirm is &quot;Yes&quot;)[(goto:&quot;Incubator with Bulb&quot;)]
-	(if: $confirm is &quot;No&quot;)[(goto:&quot;Choose LED&quot;)]
+	(if: $confirm is &quot;Yes&quot;)[(goto:&quot;Fluorescent Chan&quot;)]
+	(if: $confirm is &quot;No&quot;)[(goto:&quot;Light Bulb Selection&quot;)]
 	]
 
 
 (set:$location to &quot;Utility Closet&quot;)
-</tw-passagedata><tw-passagedata pid="4" name="Choose Incandescent" tags="utilityCloset" position="500,625" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/opreand/IllumisWorld/main/sampleImages/IncandescentBulb.png?token=GHSAT0AAAAAACQW4NBE5FOOTNSUPBKEZPX4ZQW6Y4A&quot;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="Choose Incandescent" tags="utilityCloset" position="875,2175" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/opreand/IllumisWorld/main/sampleImages/IncandescentBulb.png?token=GHSAT0AAAAAACQW4NBE5FOOTNSUPBKEZPX4ZQW6Y4A&quot;&gt;
 Will you take the Incandescent bulb?
-	(link:&quot;Incubator with Bulb&quot;)[(alert: bind $confirm, &quot;Are You Sure?&quot;, &quot;Yes&quot;, &quot;No&quot;)
-	(if: $confirm is &quot;Yes&quot;)[(goto:&quot;Incubator with Bulb&quot;)]
-	(if: $confirm is &quot;No&quot;)[(goto:&quot;Choose Incandescent&quot;)]
+	(link:&quot;Take Incandescent bulb&quot;)[(alert: bind $confirm, &quot;Are You Sure?&quot;, &quot;Yes&quot;, &quot;No&quot;)
+	(if: $confirm is &quot;Yes&quot;)[(goto:&quot;Incandescent Chan&quot;)]
+	(if: $confirm is &quot;No&quot;)[(goto:&quot;Light Bulb Selection&quot;)]
 	]
 
 
 
-(set:$location to &quot;Utility Closet&quot;)
-</tw-passagedata><tw-passagedata pid="5" name="LobbyIntro" tags="Lobby" position="100,125" size="100,100">{&lt;div class=&quot;banner&quot;&gt;
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="5" name="LobbyIntro" tags="Lobby" position="100,105" size="100,100">{&lt;div class=&quot;banner&quot;&gt;
 Sitting in the lobby of a small research facility in the Galapogos Islands, the last remaining area on Earth with clean air and water. The only remaining hope for saving our planet rests on the recent discovery of a creature that landed on the islands during a meteor shower.
 &lt;/div&gt;}
 &lt;style&gt;
@@ -155,7 +153,7 @@ a:visited {
 &lt;div class=&quot;playLink&quot;&gt;
 [[Click here to play!-&gt;opening]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Incubator with Bulb" tags="" position="700,1000" size="100,100">Dr. Chan: (Educational) CFL bulbs last longer, which means less waste. Illumi appreciates a sustainable choice.
+</tw-passagedata><tw-passagedata pid="6" name="Incubator with Bulb" tags="" position="1600,1100" size="100,100">Dr. Chan: (Educational) CFL bulbs last longer, which means less waste. Illumi appreciates a sustainable choice.
 
 Dr. Chan: (Informative) LED bulbs consume less energy, reducing our carbon footprint. Illumi thrives with these bulbs.
 
@@ -165,9 +163,9 @@ Dr. Chan: (Concerned) Incandescent bulbs consume more energy. They might harm Il
 tw-sidebar
 {
 display: none;
-}</tw-passagedata><tw-passagedata pid="7" name="opening" tags="narrative" position="100,275" size="100,100">
+}</tw-passagedata><tw-passagedata pid="7" name="opening" tags="narrative" position="100,225" size="100,100">
 &lt;div class=&quot;video-container&quot;&gt;
-    &lt;video src=&quot;https://videos.files.wordpress.com/bcdKL7qX/illumis-welcome-video.mp4&quot; width=&quot;1000&quot; height=&quot;720&quot; autoplay&gt;&lt;/video&gt;
+    &lt;video src=&quot;https://videos.files.wordpress.com/bcdKL7qX/illumis-welcome-video.mp4&quot; width=&quot;1000&quot; height=&quot;720&quot; controls&gt;&lt;/video&gt;
 	&lt;/div&gt;
 	
 	&lt;style&gt;
@@ -178,7 +176,23 @@ position: relative;
 &lt;/style&gt;
 
 [[Click here to play!-&gt;HowToPlay]]
-</tw-passagedata><tw-passagedata pid="8" name="HowToPlay" tags="HowToPlay" position="100,450" size="100,100">&lt;style&gt;
+</tw-passagedata><tw-passagedata pid="8" name="HowToPlay" tags="HowToPlay" position="100,350" size="100,100">&lt;style&gt;
+.banner {
+font-size: 20pt;
+font-family: arial;
+font-weight: bold;
+background-color: #FFFFFF;
+width: 81.8%;
+color: #FFFFFF;
+position: relative;
+margin-top: -8%;
+margin-left: 9.2%;
+
+text-align: left;
+border-color: #000;
+border: solid 2px;
+
+}
 .playLink {
 font-size: 22pt;
 font-weight: bold;
@@ -200,9 +214,9 @@ a:visited {
 }
 &lt;/style&gt;
 &lt;div class=&quot;playLink&quot;&gt;
-[[Yes, I understand!-&gt;playerSetup]]
+[[Click here to play!-&gt;opening]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="9" name="playerSetup" tags="Player-Setup playerSetup" position="100,600" size="100,100">(set:$location to &quot;playerSetup&quot;)
+</tw-passagedata><tw-passagedata pid="9" name="playerSetup" tags="Player-Setup playerSetup" position="100,475" size="100,100">(set:$location to &quot;playerSetup&quot;)
 (set: $name to (prompt: &quot;What is your name?&quot;, &quot;Eury&quot;))
 {&lt;div class=&quot;banner&quot;&gt;
 I mean, $name! Today&#39;s lesson: how many researchers does it take to change a lightbulb for Illumi? The answer? Well, we&#39;re about to find out!
@@ -245,8 +259,8 @@ a:visited {
 }
 &lt;/style&gt;
 &lt;div class=&quot;playLink&quot;&gt;
-[[Let&#39;s make sure we look presentable-&gt;Player Selection]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Footer" tags="footer" position="275,0" size="100,100">
+[[Click here to play!-&gt;Player Selection]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Footer" tags="footer" position="225,0" size="100,100">
 [
 \
 Name: $name
@@ -255,48 +269,46 @@ Location: $location
 ]
 
 [[Check tablet]] Travel to: [[Lab-&gt;go to lab]] | [[Glossary]] | [[inventory]] | Budget: $$score
-Illumi&#39;s World 2024 The University of Missouri [[Credits-&gt;The End]]</tw-passagedata><tw-passagedata pid="11" name="Dr. Maya 1" tags="" position="100,1000" size="100,100">Dr. Maya: &quot;Welcome, $name, to the Galapagos Islands, home to the incredible Illumi. But beware, a shadow looms over our paradise. You see, while our research team is dedicated to understanding and nurturing Illumi for the benefit of our planet, there&#39;s another force at play – IllumiCorp.&quot;
-
-&quot;As you embark on your journey as a researcher here, you&#39;ll discover that IllumiCorp, led by the enigmatic Dr. Carbono, has a different agenda. They see Illumi not as a solution but as a commodity to exploit, a source of power to fuel their ambitions, even if it harms our environment.&quot;
-img
-&quot;Your task is not only to uncover the mysteries of Illumi but also to protect it from those who would use it for ill-gotten gains. Your choices will shape the future of our planet and the fate of Illumi. Are you ready for the challenge ahead?&quot;
-
-Welcome to Illumi&#39;s World, an adventure to save our planet! You are at a research station on the Galapagos Islands. Dr. Maya and Dr. Chan are here with you.
-img
-Dr. Maya: (Urgently) You&#39;re here to help us. With your expertise, I believe we can save Illumi.
-Protect Illumi
-Negotiate with IllumiCorp
-
-</tw-passagedata><tw-passagedata pid="12" name="Header" tags="header" position="700,0" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="Check tablet" tags="" position="225,125" size="100,100">Illumi&#39;a Health $health | Budget Tracker $score | Environmental Data
+Illumi&#39;s World 2024 The University of Missouri [[Credits-&gt;The End]]</tw-passagedata><tw-passagedata pid="11" name="Header" tags="header" position="700,0" size="100,100"></tw-passagedata><tw-passagedata pid="12" name="Check tablet" tags="" position="475,25" size="100,100">Illumi&#39;a Health $health | Budget Tracker $score | Environmental Data
 &lt;!-- Image Map Generated by http://www.image-map.net/ --&gt;
 &lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/character-selection-for-illumis-world-1.jpg&quot;&gt;
 (click:?Page)[(goto:&quot;Dr. Maya 1&quot;)]
 
 (set:$location to &quot;Tablet&quot;)
-</tw-passagedata><tw-passagedata pid="14" name="go to lab" tags="" position="350,125" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Glossary" tags="" position="475,125" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/587dedb0-cb02-4bc7-b3ea-88d0f1eaacdd.png?w=3000&amp;h=&quot;&gt;
-</tw-passagedata><tw-passagedata pid="16" name="inventory" tags="" position="625,150" size="100,100">(if:$HasLamp is true)[1 incandescent lightbulb,  It is glows with a warm heat.]
+</tw-passagedata><tw-passagedata pid="13" name="go to lab" tags="" position="300,700" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/12/dbf396ac-6f37-4eac-86c9-cf6108fbef93-1.png?w=1400&amp;h=&quot;&gt;
+
+(b4r:&quot;double&quot;,&quot;none&quot;)+(b4r-size:1,1,2.3)+(b4r-colour:white)[&#39;&#39;Your choices will impact Illumi&#39;s health throughout the game. Dr. Maya will guide you. Let&#39;s begin our mission to save Illumi!&#39;&#39;]
+
+(click:?Page)[(goto:&quot;Laboratory&quot;)]
+
+[[To the Laboratory!	-&gt;Laboratory]]
+
+(set:$location to &quot;Labratory&quot;)
+(set:$score to $score + 1000)
+</tw-passagedata><tw-passagedata pid="14" name="Glossary" tags="" position="475,125" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/587dedb0-cb02-4bc7-b3ea-88d0f1eaacdd.png?w=3000&amp;h=&quot;&gt;
+</tw-passagedata><tw-passagedata pid="15" name="inventory" tags="" position="625,150" size="100,100">(if:$HasLamp is true)[1 incandescent lightbulb,  It is glows with a warm heat.]
 (if:$hasfluorescent is true)[A fluorescent lightbulb,  It is glows with a warm heat.]
 (if:$HasLED is true)[An LED lightbulb. It is glows with a warm heat.]
-</tw-passagedata><tw-passagedata pid="17" name="Map TerraLux" tags="terraLuxMap" position="800,0" size="100,100">&lt;img src=&quot;&lt;!--https://studiozuhno.files.wordpress.com/2024/04/terralux-laboratories.png--&gt;&quot;&gt;
+</tw-passagedata><tw-passagedata pid="16" name="Map TerraLux" tags="terraLuxMap" position="800,0" size="100,100">&lt;img src=&quot;&lt;!--https://studiozuhno.files.wordpress.com/2024/04/terralux-laboratories.png--&gt;&quot;&gt;
 (set:$location to &quot;TerraLux Laboratories&quot;)
-</tw-passagedata><tw-passagedata pid="18" name="MapTerraLuxUtilityCloset" tags="utilityClosetMap" position="900,0" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/587dedb0-cb02-4bc7-b3ea-88d0f1eaacdd.png?w=3000&amp;h=&quot;&gt;
+</tw-passagedata><tw-passagedata pid="17" name="MapTerraLuxUtilityCloset" tags="utilityClosetMap" position="900,0" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/587dedb0-cb02-4bc7-b3ea-88d0f1eaacdd.png?w=3000&amp;h=&quot;&gt;
 
-(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="19" name="Map Incubator" tags="incubatorMap" position="1000,0" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/terralux-map.png&quot;&gt;
-(set:$location to &quot;Incubator&quot;)</tw-passagedata><tw-passagedata pid="20" name="Incubator" tags="incubator" position="700,425" size="100,100">Jarvis! Please escort $name to the Utility Closet, quick!
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="18" name="Map Incubator" tags="incubatorMap" position="1000,0" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/terralux-map.png&quot;&gt;
+(set:$location to &quot;Incubator&quot;)</tw-passagedata><tw-passagedata pid="19" name="Utility Closet 1" tags="incubator" position="1000,1200" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/terralux-library.png&quot; usemap=&quot;#example_map&quot;&gt;
+(set:$location to &quot;Utility&quot;)
+(click:?Page)[(goto:&quot;Utility Closet 2&quot;)]
 
-[[Follow Jarvis-&gt;Jarvis and Bulb Selection]]
 
-(set:$location to &quot;Incubator&quot;)
-</tw-passagedata><tw-passagedata pid="21" name="The End" tags="" position="475,0" size="100,100">&lt;div class=&quot;video-container&quot;&gt;
+</tw-passagedata><tw-passagedata pid="20" name="The End" tags="" position="350,25" size="100,100">&lt;div class=&quot;video-container&quot;&gt;
     &lt;video src=&quot;https://videos.files.wordpress.com/d9GFP7lK/illumis-world-act-1-closing-scene-1.mp4
 &quot; width=&quot;720&quot; height=&quot;720&quot; autoplay&gt;&lt;/video&gt;
 	&lt;/div&gt;
     
-</tw-passagedata><tw-passagedata pid="22" name="Player Selection" tags="" position="100,800" size="100,100">Ok, $name. Great to Meet you! But, remind me what you look like. 
+</tw-passagedata><tw-passagedata pid="21" name="Player Selection" tags="" position="100,600" size="100,100">Ok, $name. Great to Meet you! But, remind me what you look like. 
 
 &lt;!-- Image Map Generated by http://www.image-map.net/ --&gt;
 &lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/character-selection-for-illumis-world-1.jpg&quot;&gt;
-(click:?Page)[(goto:&quot;Dr. Maya 1&quot;)]
+(click:?Page)[(goto:&quot;Dr. Maya A1&quot;)]
 &lt;map name=&quot;image-map&quot;&gt;
     &lt;area target=&quot;&quot; alt=&quot;&quot; title=&quot;&quot; href=&quot;https://twinery.org/2/#/stories/b0fd8629-ef03-4fed-9190-6e2813299bcf/test/6375e4f9-151e-487d-9b74-513b240edd43&quot; coords=&quot;0,777,234,22&quot; shape=&quot;rect&quot;&gt;
     &lt;area target=&quot;&quot; alt=&quot;&quot; title=&quot;&quot; href=&quot;https://twinery.org/2/#/stories/b0fd8629-ef03-4fed-9190-6e2813299bcf/test/6375e4f9-151e-487d-9b74-513b240edd43&quot; coords=&quot;201,1539,9,812&quot; shape=&quot;rect&quot;&gt;
@@ -310,9 +322,249 @@ Negotiate with IllumiCorp
     &lt;area target=&quot;&quot; alt=&quot;&quot; title=&quot;&quot; href=&quot;https://twinery.org/2/#/stories/b0fd8629-ef03-4fed-9190-6e2813299bcf/test/6375e4f9-151e-487d-9b74-513b240edd43&quot; coords=&quot;723,808,949,1581&quot; shape=&quot;rect&quot;&gt;
     &lt;area target=&quot;&quot; alt=&quot;&quot; title=&quot;&quot; href=&quot;https://twinery.org/2/#/stories/b0fd8629-ef03-4fed-9190-6e2813299bcf/test/6375e4f9-151e-487d-9b74-513b240edd43&quot; coords=&quot;981,807,1178,1586&quot; shape=&quot;rect&quot;&gt;
     &lt;area target=&quot;&quot; alt=&quot;&quot; title=&quot;&quot; href=&quot;https://twinery.org/2/#/stories/b0fd8629-ef03-4fed-9190-6e2813299bcf/test/6375e4f9-151e-487d-9b74-513b240edd43&quot; coords=&quot;1223,811,1455,1600&quot; shape=&quot;rect&quot;&gt;
-&lt;/map&gt;</tw-passagedata><tw-passagedata pid="23" name="Dr. Carbono Cuts Power" tags="" position="1100,600" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/illumicorp-inciting-event-1.png&quot;&gt;</tw-passagedata><tw-passagedata pid="24" name="TerraLux Map" tags="" position="1100,400" size="100,100"></tw-passagedata><tw-passagedata pid="25" name="Take Incandescent" tags="" position="500,800" size="100,100"></tw-passagedata><tw-passagedata pid="26" name="Take LED" tags="" position="700,875" size="100,100"></tw-passagedata><tw-passagedata pid="27" name="Take Fluorescent" tags="" position="900,825" size="100,100"></tw-passagedata><tw-passagedata pid="28" name="Jarvis and Bulb Selection" tags="" position="700,600" size="100,100">[[Choose LED]] 
-[[Choose Fluorescent]] 
-[[Choose Incandescent]] </tw-passagedata><tw-passagedata pid="29" name="Dr. Maya 2" tags="" position="100,1175" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="Dr. Maya 3" tags="" position="100,1300" size="100,100"></tw-passagedata></tw-storydata>
+&lt;/map&gt;</tw-passagedata><tw-passagedata pid="22" name="Dr. Carbono Cuts Power" tags="" position="1825,1775" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/illumicorp-inciting-event-1.png&quot;&gt;</tw-passagedata><tw-passagedata pid="23" name="TerraLux Map" tags="" position="1100,400" size="100,100"></tw-passagedata><tw-passagedata pid="24" name="Utility Closet 2" tags="" position="1000,1300" size="100,100">
+&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/fcca9c69-bbe9-4fc5-961d-f05a74cc14ca-1.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+
+&lt;map name=&quot;example_map&quot;&gt;(set:$location to &quot;Utility Closet&quot;)
+(click:?Page)[(goto:&quot;Utility Closet 3&quot;)]</tw-passagedata><tw-passagedata pid="25" name="Utility Closet Meet Jarvis 2" tags="" position="1250,625" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/91a5d4e8-bae5-43ce-b235-4770184237a0-1.png?strip=info&amp;w=1589
+&quot; usemap=&quot;#example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Utility Closet Meet Jarvis 2&quot;)]
+</tw-passagedata><tw-passagedata pid="26" name="meet dr. chan" tags="" position="375,1525" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/untitled.png?w=1024
+&quot;&gt;
+
+(click:?Page)[(goto:&quot;Dr. Maya 6&quot;)]
+</tw-passagedata><tw-passagedata pid="27" name="Dr. Maya 6" tags="" position="575,1900" size="100,100">{&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/dr.-maya-intro-6.png&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;725,783,301,726&quot; /&gt;&#39;)[
+        (goto:&quot;Protect Illumi&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot;   coords=&quot;726,883,305,832,436,836,599,851,586,851&quot; /&gt;&#39;)[
+        (goto:&quot;Negotiate with IllumiCorp&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot;   coords=&quot;726,883,305,832,436,836,599,851,586,851&quot; /&gt;&#39;)[
+        (goto:&quot;go to lab&quot;)
+]
+
+&lt;/map&gt;}
+[[Protect Illumi]] 
+[[Negotiate with IllumiCorp]] 
+[[Quit]]</tw-passagedata><tw-passagedata pid="28" name="Protect Illumi" tags="" position="475,2000" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/e436ecaf-696a-4609-8e28-583d5b6b4fbe-1.png&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;674,64,1015,452&quot; /&gt;&#39;)[
+        (goto:&quot;go to lab&quot;)
+]
+
+(click:?Page)[(goto:&quot;go to lab&quot;)]
+
+(set: $showFooter to true)
+
+[[To the lab!-&gt;go to lab]]</tw-passagedata><tw-passagedata pid="29" name="Negotiate with IllumiCorp" tags="" position="675,2000" size="100,100">&lt;img src=&quot;https://nicholasandriani.files.wordpress.com/2023/11/1398e231-0cc0-4e5b-b1bf-c07f8cb11ea8-1.png&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;674,64,1015,452&quot; /&gt;&#39;)[
+        (goto:&quot;go to lab&quot;)
+]
+
+(click:?Page)[(goto:&quot;go to lab&quot;)]
+
+(set: $showFooter to true)
+
+[[To the lab!-&gt;go to lab]]</tw-passagedata><tw-passagedata pid="30" name="Quit" tags="" position="575,2100" size="100,100">We cant quit now!</tw-passagedata><tw-passagedata pid="31" name="Laboratory" tags="" position="425,600" size="100,100">[[Go to Incubator-&gt;Incubator]] </tw-passagedata><tw-passagedata pid="32" name="Take Incandescent bulb" tags="" position="1400,800" size="100,100">(set: $HasLamp to true)
+</tw-passagedata><tw-passagedata pid="33" name="Take LED Bulb" tags="" position="1550,850" size="100,100">(set: $HasLED to true)
+</tw-passagedata><tw-passagedata pid="34" name="Take Fluorescent Bulb" tags="" position="1600,675" size="100,100">(set: $hasFluorescent to true)
+</tw-passagedata><tw-passagedata pid="35" name="Utility Closet 3" tags="" position="1000,1400" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/4506b6dd-ef5a-4e8d-8b03-36b354e9edae-1.png?strip=info&amp;w=1589
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Light Bulb Selection&quot;)]
+(set:$location to &quot;Utility Closet&quot;)
+</tw-passagedata><tw-passagedata pid="36" name="Light Bulb Selection" tags="" position="1000,1500" size="100,100">{&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/71d60e6c-4ea7-47f5-869c-143fa71ec45f-1.png?w=2625&amp;amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;45,704,830,902&quot; /&gt;&#39;)[
+        (goto:&quot;Choose Bulb&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot;   coords=&quot;41,963,840,1157&quot; /&gt;&#39;)[
+        (goto:&quot;Choose Bulb&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot;   coords=&quot;33,1201,865,1398&quot; /&gt;&#39;)[
+        (goto:&quot;Choose Bulb&quot;)
+]
+&lt;/map&gt;}
+
+(set:$location to &quot;Utility&quot;)
+(click:?Page)[(goto:&quot;Choose Bulb&quot;)]
+</tw-passagedata><tw-passagedata pid="37" name="LIGHTBULB TASK" tags="" position="1350,950" size="100,100"></tw-passagedata><tw-passagedata pid="38" name="Incubator" tags="" position="525,475" size="100,100">Welcome to the Incubator. Are you ready to meet the resident Illumi?
+
+We found these toddlers alone and wounded. 
+
+You can start helping us by selecting one to nurture back to health as we determine the best habitat for their species. </tw-passagedata><tw-passagedata pid="39" name="Dr. Maya&#39;s Congratulations" tags="" position="1225,25" size="100,100">https://studiozuhno.files.wordpress.com/2024/04/99271c44-6d0d-4410-85ac-5fa791617ce0-1.png?strip=info&amp;w=1024
+
+That was intense, but handled it well!</tw-passagedata><tw-passagedata pid="40" name="Dr. Maya A2" tags="" position="100,800" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.mayaa2_.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Dr. Maya A3&quot;)]</tw-passagedata><tw-passagedata pid="41" name="Dr. Maya A1" tags="" position="100,700" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya1-1-1.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Dr. Maya A2&quot;)]</tw-passagedata><tw-passagedata pid="42" name="Dr. Maya A3" tags="" position="100,900" size="100,100">&lt;img src=&quot;
+
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-2-maya-b.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+
+
+(click:?Page)[(goto:&quot;Dr. Maya A4&quot;)]</tw-passagedata><tw-passagedata pid="43" name="Dr. Maya A4" tags="" position="100,1000" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-3-maya-c.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Dr. Maya A5&quot;)]</tw-passagedata><tw-passagedata pid="44" name="Dr. Maya A5" tags="" position="100,1100" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-4-maya-d.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Dr. Maya A6&quot;)]</tw-passagedata><tw-passagedata pid="45" name="Dr. Maya A6" tags="" position="100,1200" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-5-dr.-maya.-and-dr.-chan.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Dr. Maya A7&quot;)]</tw-passagedata><tw-passagedata pid="46" name="Dr. Maya A7" tags="" position="100,1300" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.mayaa2_.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Dr. Maya A8&quot;)]</tw-passagedata><tw-passagedata pid="47" name="Dr. Maya A8" tags="" position="100,1400" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-6-maya-e.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Dr. Maya A9&quot;)]</tw-passagedata><tw-passagedata pid="48" name="Dr. Maya A9" tags="" position="100,1500" size="100,100">{&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-7-maya-e.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;67,806,497,916&quot; /&gt;&#39;)[
+        (goto:&quot;Protect&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;531,804,969,926&quot; /&gt;&#39;)[
+        (goto:&quot;Negotiate&quot;)
+]
+&lt;/map&gt;}</tw-passagedata><tw-passagedata pid="49" name="Dr. Maya A10" tags="" position="100,1800" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-6-maya-e.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Dr. Maya A11&quot;)]
+</tw-passagedata><tw-passagedata pid="50" name="Dr. Maya A11" tags="" position="100,1900" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/965f7caf-b163-4ae3-8513-d97844d99d47-1-1.png?w=2625&amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Dr. Maya A12&quot;)]</tw-passagedata><tw-passagedata pid="51" name="Negotiate" tags="" position="0,1600" size="100,100">
+&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya3-8-negotiate-with-illumiccorp.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Protect&quot;)]
+</tw-passagedata><tw-passagedata pid="52" name="Protect" tags="" position="100,1700" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/77b096c4-8b27-492c-9367-0e2b7bafdc3f-1.png?w=2625&amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Dr. Maya A10&quot;)]
+
+
+&lt;img src=&quot;
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+</tw-passagedata><tw-passagedata pid="53" name="Dr. Maya A12" tags="" position="100,2000" size="100,100">(click:?Page)[(goto:&quot;meet dr. chan&quot;)]</tw-passagedata><tw-passagedata pid="54" name="Select Illumi" tags="" position="700,700" size="100,100">{&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/7c28b435-3a16-4ba2-897c-9558c86c7432-1.png?w=2625&amp;amp;h=
+&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;28,521,261,1002&quot; /&gt;&#39;)[
+        (goto:&quot;Illumi 1&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot;   coords=&quot;412,640,731,991&quot; /&gt;&#39;)[
+        (goto:&quot;Illumi 2&quot;)
+]
+(link:&#39;&lt;area shape=&quot;rect&quot;   coords=&quot;778,708,1075,989&quot; /&gt;&#39;)[
+        (goto:&quot;Illumi 3&quot;)
+]
+
+&lt;/map&gt;}
+
+
+
+
+</tw-passagedata><tw-passagedata pid="55" name="Illumi 2" tags="" position="700,800" size="100,100">(t8n:&quot;slide-right&quot;)+(t8n-time:6s)+(t8n-skip:0.2s)[Dr. Chan! Illumi There&#39;s been an energy surge!!!!] 
+&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/dr.maya-meet-dr.-chan-13-aquashade.png?w=1024
+&quot;&gt;
+</tw-passagedata><tw-passagedata pid="56" name="Illumi 1" tags="" position="600,800" size="100,100">(t8n:&quot;slide-right&quot;)+(t8n-time:6s)+(t8n-skip:0.2s)[Dr. Chan! Illumi There&#39;s been an energy surge!!!!] 
+&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/dr.maya-meet-dr.-chan-12-blazebeam.png?w=1024
+&quot;&gt;
+</tw-passagedata><tw-passagedata pid="57" name="Illumi 3" tags="" position="800,800" size="100,100">(t8n:&quot;slide-right&quot;)+(t8n-time:6s)+(t8n-skip:0.2s)[Dr. Chan! Illumi There&#39;s been an energy surge!!!!] 
+&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.maya-meet-dr.-chan-14-sparklefin.png?w=1024
+&quot;&gt;</tw-passagedata><tw-passagedata pid="58" name="Map to Utility Closet" tags="" position="700,1100" size="100,100">{&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/terralux-map.png
+&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(link:&#39;&lt;area shape=&quot;rect&quot; coords=&quot;129,201,394,512&quot; /&gt;&#39;)[
+        (goto:&quot;Utility Closet 1&quot;)
+]
+
+&lt;/map&gt;}</tw-passagedata><tw-passagedata pid="59" name="Untitled Passage 1" tags="" position="1475,1100" size="100,100"></tw-passagedata><tw-passagedata pid="60" name="Choose Bulb" tags="" position="1000,1650" size="100,100">[[Ask about Fluorescent-&gt;Fluorescent]] -  [[Ask about Incandescent-&gt; Incandescent]] - [[Ask about LED-&gt; LED]]
+&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/71d60e6c-4ea7-47f5-869c-143fa71ec45f-1.png?w=2625&amp;amp;h=&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;</tw-passagedata><tw-passagedata pid="61" name=" Incandescent" tags="" position="900,2000" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/c897d623-31d6-4405-8612-d090ad774c57-2-1.png
+&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Choose Incandescent&quot;)]
+</tw-passagedata><tw-passagedata pid="62" name=" LED" tags="" position="1100,2000" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/174d2100-06fd-41b0-9d80-44785de178b1-3-1.png
+&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Choose LED&quot;)]
+</tw-passagedata><tw-passagedata pid="63" name="Fluorescent" tags="" position="1000,2000" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/f9782759-c33a-4d39-a8ea-ba4de5c9e2b7-2-1.png&quot; usemap=&quot;#example_map&quot;&gt;
+&lt;map name=&quot;example_map&quot;&gt;
+
+(click:?Page)[(goto:&quot;Choose Fluorescent&quot;)]
+</tw-passagedata><tw-passagedata pid="64" name="Incandescent Chan" tags="" position="800,2375" size="100,100">https://studiozuhno.files.wordpress.com/2024/04/48acb120-a09f-401a-a3d0-defdb0dae314-1.png?w=2625&amp;h=</tw-passagedata><tw-passagedata pid="65" name="Fluorescent Chan" tags="" position="1175,2375" size="100,100"></tw-passagedata><tw-passagedata pid="66" name="LED Chan" tags="" position="1000,2400" size="100,100">https://studiozuhno.files.wordpress.com/2024/04/3a55a3b9-82d7-46f4-94b1-fe62004095fe-1.png?w=2625&amp;h=</tw-passagedata><tw-passagedata pid="67" name="Incandescent 2" tags="" position="800,2500" size="100,100">https://studiozuhno.files.wordpress.com/2024/04/aa49ad24-8687-4f93-9782-0f10e1b17449-1.png?w=2625&amp;h=</tw-passagedata><tw-passagedata pid="68" name="Fluorescent 2" tags="" position="1200,2500" size="100,100"></tw-passagedata><tw-passagedata pid="69" name="LED 2" tags="" position="1000,2525" size="100,100">https://studiozuhno.wordpress.com/game-design-assets/illumis-world-game-design-assets/#jp-carousel-152</tw-passagedata><tw-passagedata pid="70" name="Closing 2" tags="" position="1475,1400" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/37d5e8df-295c-4db7-98ff-1dd60d004df1-1.png?strip=info&amp;w=1668
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Closing 3&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="71" name="Closing 3" tags="" position="1475,1500" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/dr.-chan-assignment-1-5-1.png
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Closing 4&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="72" name="Closing 4" tags="" position="1475,1600" size="100,100">&lt;img src=&quot;
+
+https://studiozuhno.files.wordpress.com/2024/04/e85702f8-6c6a-4a23-93e2-ba7e92eaa352-1.png?strip=info&amp;w=1024
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Blow out&quot;)]
+(set:$location to &quot;Utility Closet&quot;)
+</tw-passagedata><tw-passagedata pid="73" name="Closing 1" tags="" position="1475,1300" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/9e0dc064-b3bb-481e-8494-57e07d346515-1.png?strip=info&amp;w=1668
+
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Closing 2&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="74" name="Blow out" tags="" position="1475,1800" size="100,100">
+&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/96aa6733-a6b0-4497-9ec9-5da4a0a1e7a5-1.png?w=2625&amp;h=
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Untitled Passage)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="75" name="Untitled Passage" tags="" position="1475,1950" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/05415a89-0325-4afe-9856-20b33eb151d2-1.png?w=2625&amp;h=
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Untitled Passage 2&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="76" name="Untitled Passage 2" tags="" position="1475,2100" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/7135064a-55f1-457d-9db4-b5cbeea62e21-1.png?w=2625&amp;h=
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Untitled Passage 3&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="77" name="Untitled Passage 3" tags="" position="1500,2225" size="100,100">&lt;img src=&quot;
+https://studiozuhno.files.wordpress.com/2024/04/65e0adcc-dd26-4a0f-aa00-53fe33cc06ec-1.png?strip=info&amp;w=1024
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Untitled Passage 4&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="78" name="Untitled Passage 4" tags="" position="1500,2350" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/50e8a3cd-207d-46ff-811f-8ffad05c4cfd-1.png?strip=info&amp;w=1024
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Untitled Passage 5&quot;)]
+(set:$location to &quot;Utility Closet&quot;)
+
+</tw-passagedata><tw-passagedata pid="79" name="Untitled Passage 5" tags="" position="1500,2525" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/img_1453-1.png?strip=info&amp;w=2000
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;Untitled Passage 6&quot;)]
+(set:$location to &quot;Utility Closet&quot;)</tw-passagedata><tw-passagedata pid="80" name="Untitled Passage 6" tags="" position="1500,2675" size="100,100">&lt;img src=&quot;https://studiozuhno.files.wordpress.com/2024/04/illumicorp-inciting-event.png
+
+
+&quot; usemap=&quot;#example_map&quot;&gt;
+(click:?Page)[(goto:&quot;The End&quot;)]
+(set:$location to &quot;The End&quot;)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
