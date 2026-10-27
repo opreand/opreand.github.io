@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dracula Reveal</title>
+
+<!-- Spooky Gothic Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+    body {
+        background: #000;
+        color: #fff;
+        font-family: "Georgia", serif;
+        padding: 2em;
+    }
+
+    .scene {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .story {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 1em;
+    }
+
+    .center {
+        text-align: center;
+        margin: 1.5em 0;
+    }
+
+    .image {
+        max-width: 300px;
+        border-radius: 12px;
+    }
+
+.emphasis {
+    font-weight: bold;
+    color: #ff6600; /* optional Dracula magic color */
+}
+
+.whisper {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+    .continue-btn {
+        display: none;
+        margin: 2em auto;
+        padding: 0.6em 1.2em;
+        background: #ff6600;
+        color: #000;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .continue-btn:hover {
+        background: #ffa500;
+    }
+
+    .word {
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+        color: #fff;
+    }
+
+    .word.show {
+        opacity: 1;
+    }
+
+    /* Hide both lines until animation begins */
+    #archLine1,
+    #archLine2 {
+        visibility: hidden;
+    }
+
+    /* SCENE 1 — darkened corridor background behind content */
+#scene1 {
+    position: relative;
+    padding: 2em;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Background corridor image, masked with gradient */
+#scene1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.08) 0%,      /* faint grey at top */
+            rgba(0,0,0,0.85) 40%,           /* darkening */
+            rgba(0,0,0,1) 70%,              /* full black */
+            rgba(0,0,0,1) 100%              /* pure black bottom */
+        ),
+        url('https://opreand.github.io/Level_3B/SpookyBackground.jpg')
+            center top / cover no-repeat;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+/* Faint pumpkin glow only at top */
+#scene1::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,140,0,0.06), transparent 60%),
+        radial-gradient(circle at 50% 25%, rgba(255,140,0,0.06), transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(255,140,0,0.06), transparent 60%);
+
+    animation: pumpkinGlow1 5s ease-in-out infinite;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+@keyframes pumpkinGlow1 {
+    0%   { opacity: 0.04; }
+    50%  { opacity: 0.10; }
+    100% { opacity: 0.04; }
+}
+
+/* Scene 1 content sits above background */
+#scene1Content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Atmospheric narration style */
+
+.scene1-text {
+    font-family: "Cinzel Decorative", serif;
+    font-style: italic;
+    font-size: 1.05em;        /* reduced from ~1.2em */
+    text-align: center;
+    max-width: 600px;         /* slightly narrower to reduce vertical wrapping */
+    margin: 0.5em auto 1em;   /* tighter spacing */
+    text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+    /* SCENE 2 — full corridor background */
+    #scene2 {
+        position: relative;
+        background: url('https://opreand.github.io/Level_3B/SpookyBackground.jpg')
+                    center top / cover no-repeat;
+        padding: 2em;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    #scene2::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(circle at 20% 80%, rgba(255,140,0,0.12), transparent 60%),
+            radial-gradient(circle at 50% 85%, rgba(255,140,0,0.12), transparent 60%),
+            radial-gradient(circle at 80% 80%, rgba(255,140,0,0.12), transparent 60%);
+        animation: pumpkinGlow2 4s ease-in-out infinite;
+        border-radius: 12px;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    @keyframes pumpkinGlow2 {
+        0%   { opacity: 0.15; }
+        50%  { opacity: 0.28; }
+        100% { opacity: 0.15; }
+    }
+
+    .hidden::after {
+        opacity: 1 !important;
+    }
+
+    /* Scene 2 content above background */
+    #scene2Content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        gap: 2em;
+        margin-top: 1em;
+    }
+
+    #draculaHandsImage {
+        margin-left: 40px;
+    }
+
+    .bubble {
+        background: rgba(0,0,0,0.55);
+        padding: 1em 1.2em;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 102, 0, 0.4);
+        box-shadow: 0 0 12px rgba(255, 102, 0, 0.25);
+        max-width: 420px;
+        margin-top: 10px;
+    }
+
+    /* Scene 3 layout */
+    #finalCloser {
+        position: relative;
+        padding: 2em;
+        border-radius: 12px;
+        background: url('https://opreand.github.io/Level_3B/SpookyBackground.jpg')
+                    center top / cover no-repeat;
+        overflow: hidden;
+    }
+
+    #finalCloser::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(circle at 20% 80%, rgba(255,140,0,0.10), transparent 60%),
+            radial-gradient(circle at 50% 85%, rgba(255,140,0,0.10), transparent 60%),
+            radial-gradient(circle at 80% 80%, rgba(255,140,0,0.10), transparent 60%);
+        animation: pumpkinGlow3 4s ease-in-out infinite;
+        border-radius: 12px;
+        z-index: 0;
+    }
+
+    @keyframes pumpkinGlow3 {
+        0%   { opacity: 0.12; }
+        50%  { opacity: 0.22; }
+        100% { opacity: 0.12; }
+    }
+
+    #closerInner {
+        position: relative;
+        z-index: 1;
+    }
+
+    #closerContent {
+        display: flex;
+        align-items: flex-start;
+        gap: 2em;
+        margin-top: 1em;
+        position: relative;
+    }
+
+    #closerDracula {
+        margin-left: 80px;
+        max-width: 260px;
+        border-radius: 12px;
+    }
+
+   /* Upgraded banner */
+#halloweenBanner {
+    width: 100%;
+    background: #ff6600;
+    border: 4px solid #000;
+    padding: 1em 0;
+    text-align: center;
+    margin-bottom: 2em;
+    box-shadow: 0 0 12px #ff6600, 0 0 24px #ff9dfc;
+    font-family: "Bowlby", serif;
+    font-weight: 400; /* heavier */
+    font-size: 2.8em; /* slightly larger */
+    letter-spacing: 4px;
+    color: #000;
+    text-shadow:
+        0 0 4px #fff,
+        0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+/* Closing text block */
+
+#closerTextBlock {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    padding: 1.2em 1.4em;
+    margin-top: 10px;
+
+    /* The veil */
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55) 0%,     /* darker at top */
+        rgba(0,0,0,0.35) 40%,    /* soft mid */
+        rgba(0,0,0,0.25) 100%    /* very subtle bottom */
+    );
+
+    border-radius: 12px;
+    backdrop-filter: blur(2px); /* softens corridor behind text */
+}
+
+
+/* Main ominous line */
+.closer-line.main {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1.55em;
+    font-style: italic;
+    color: #ff6600;
+    text-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+    margin-bottom: 0.6em;
+}
+
+.closer-line.sub {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #e6d7c3;
+    opacity: 0.95;
+    text-shadow: 0 0 6px rgba(0,0,0,0.7);
+    margin-bottom: 0.4em;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SCENE 1: DARKNESS → FAINT CORRIDOR REVEAL -->
+<div id="scene1" class="scene">
+    <div id="scene1Content">
+
+        <div class="scene1-text">
+            The lanterns flare—brighter than ever—casting long shadows that twist and coil along the corridor walls.
+        </div>
+
+        <div class="scene1-text">
+            Ghost‑Arch drifts forward, his form flickering as the Halloween magic reaches its peak.
+        </div>
+
+        <div class="scene1-text">
+            A hum rises through the dark level, ancient and electric, as the darkness itself begins to reshape.
+        </div>
+
+        <div class="center">
+            <img src="https://opreand.github.io/Level_3B/Arch_Ghost_to_Dracula.gif" class="image">
+        </div>
+
+        <button id="continueBtn1" class="continue-btn">
+            Continue…
+        </button>
+
+    </div>
+</div>
+
+
+<!-- SCENE 2: DRACULA + DIALOGUE -->
+<div id="scene2" class="scene hidden">
+
+    <div id="scene2Content">
+
+        <img id="draculaHandsImage"
+             src="https://opreand.github.io/Level_3B/ArchDracular_Hands.png"
+             class="image"
+             style="display:none;">
+
+        <div id="dialogueBlock" class="bubble">
+            <p id="archLine1" class="story">
+                <span class="emphasis">“Designer…”</span><span class="whisper"> His voice curls through the corridor like smoke.</span>
+            </p>
+
+            <p id="archLine2" class="story">
+                “The lanterns have done their work. Their magic fades at dawn — but you have lit the path.”
+            </p>
+        </div>
+
+    </div>
+
+    <button id="continueBtn2" class="continue-btn">
+        Continue…
+    </button>
+
+</div>
+
+<!-- FINAL CLOSER -->
+<div id="finalCloser" class="hidden corridor-bg" style="margin-top: 2.5em;">
+    <div id="closerInner">
+
+        <!-- Upgraded Halloween Banner -->
+        <div id="halloweenBanner">
+            HAPPY HALLOWEEN, DESIGNER
+        </div>
+
+        <div id="closerContent">
+            <img id="closerDracula"
+                 src="https://opreand.github.io/Level_3B/ArchDracula.png">
+
+            <div id="closerTextBlock">
+                <p class="closer-line main">
+                    The dark level is not finished with you yet.
+                </p>
+<p class="closer-line main">
+    The lanterns fade at dawn, but their glow has revealed only the beginning of the mystery.
+</p>
+
+<p class="closer-line sub">
+    Level 4 still lies somewhere in the dark.
+</p>
+
+<p class="closer-line sub">
+    So we proceed with caution — iterating our way toward whatever waits beyond the light.
+</p>
+
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script>
+/* Show Continue button after GIF finishes */
+setTimeout(() => {
+    document.getElementById("continueBtn1").style.display = "block";
+}, 5000);
+
+
+/* Word-by-word talking effect */
+function speakLine(selector, delay = 560) {
+    const element = document.querySelector(selector);
+
+    element.style.visibility = "visible";
+
+    // Preserve formatting by splitting only on spaces OUTSIDE of spans
+    const html = element.innerHTML;
+
+    // Split into tokens: either <span>…</span> blocks or plain words
+    const tokens = html.match(/<span.*?<\/span>|[^ ]+/g);
+
+    // Rebuild with animation spans
+    element.innerHTML = tokens
+        .map(token => {
+            // If token is already a span (formatted), wrap the WHOLE thing
+            if (token.startsWith("<span")) {
+                return `<span class="word">${token}</span>`;
+            }
+            // Otherwise wrap the plain word
+            return `<span class="word">${token}</span>`;
+        })
+        .join(" ");
+
+    const spans = element.querySelectorAll(".word");
+    spans.forEach((span, i) => {
+        setTimeout(() => {
+            span.classList.add("show");
+        }, i * delay);
+    });
+
+    return tokens.length * delay;
+}
+
+
+
+/* Transition from Scene 1 → Scene 2 */
+document.getElementById("continueBtn1").addEventListener("click", () => {
+    const scene1 = document.getElementById("scene1");
+    const scene2 = document.getElementById("scene2");
+
+    scene1.classList.add("hidden");
+
+    setTimeout(() => {
+        scene1.style.display = "none";
+        scene2.classList.remove("hidden");
+
+        // Show Dracula image immediately
+        document.getElementById("draculaHandsImage").style.display = "block";
+
+        // *** NEW: Wait 3 seconds before starting word-by-word animation ***
+        setTimeout(() => {
+
+            const line1Duration = speakLine("#archLine1", 560);
+
+            setTimeout(() => {
+                speakLine("#archLine2", 360);
+
+                // Show Continue button after line 2 finishes
+                setTimeout(() => {
+                    document.getElementById("continueBtn2").style.display = "block";
+                }, 260 * 10);
+
+            }, line1Duration + 400);
+
+        }, 2000); // <-- 3-second load delay
+
+    }, 1000);
+});
+
+
+
+/* Transition from Scene 2 → Final Closer */
+document.getElementById("continueBtn2").addEventListener("click", () => {
+    document.getElementById("scene2").classList.add("hidden");
+
+    setTimeout(() => {
+        document.getElementById("scene2").style.display = "none";
+        document.getElementById("finalCloser").classList.remove("hidden");
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
